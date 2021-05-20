@@ -1,0 +1,23 @@
+module Boolean
+  ( bNot
+  , bAnd
+  , bOr
+  , bNand
+  ) where
+
+import Prelude
+
+bNot :: Boolean -> Boolean
+bNot true = false
+bNot false = true
+
+bAnd :: Boolean -> Boolean -> Boolean
+bAnd true true = true
+bAnd _ _ = false
+
+bOr :: Boolean -> Boolean -> Boolean
+bOr false false = false
+bOr _ _ = true
+
+bNand :: Boolean -> Boolean -> Boolean
+bNand b = not <<< and b
