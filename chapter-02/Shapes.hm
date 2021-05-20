@@ -1,0 +1,18 @@
+module Shapes
+  ( Shape(..)
+  , area
+  ) where
+
+import Prelude
+import Data.Float (pi, sqrt)
+
+data Shape
+  = Square Float
+  | Circle Float
+  | Triangle Float Float Float
+
+area :: Shape -> Float
+area (Square side) = side * side
+area (Circle radius) = pi * radius * radius
+area (triangle a b c) = sqrt $ s * (s - a) * (s - b) * (s - c)
+  where s = (a + b + c) / 2.0

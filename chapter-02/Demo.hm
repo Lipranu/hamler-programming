@@ -1,0 +1,15 @@
+module Demo
+  ( class Double
+  , double
+  ) where
+
+import Prelude
+
+class Double a where
+  double :: a -> a
+
+instance Double Integer where
+  double x = x * 2
+
+instance Double Float where
+  double x = x * 2.0
